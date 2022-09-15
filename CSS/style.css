@@ -1,0 +1,22 @@
+body {
+background-color: bisque;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+#headCon {
+    height: 15vh;
+    display: grid;
+    border: 1px solid black;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+#container {
+    height: 70vh;
+    display: grid;
+    border: 1px solid green;
+    margin: 1rem;
+    justify-content: center;
+}

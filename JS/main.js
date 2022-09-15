@@ -21,8 +21,10 @@ function standardTime() {
     else if (milHours <= 12) {
     stanHours = milHours+ ':' + mint + ' PM'
     }
-    else {console.log('wrong')} 
+    else {console.log('wrong')}
+    
 }
+//setTimeout(standardTime, 15000) need to add auto renew function
 standardTime()
 
 console.log(stanHours +':' + mint + ' PM')
