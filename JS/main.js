@@ -5,10 +5,6 @@ let mint = milTime.getMinutes()
 let secs = milTime.getSeconds()
 // clockTime.innerText = milHours + ':' + mint + ':' + secs
 
-
-
-
-
 function militaryTime() {
     let officalTime = new Date()
     let setTime = document.getElementById('clock')
@@ -44,51 +40,54 @@ function standardTime() {
     let clockStand = document.getElementById('standardTimeDiv')
     let stanHours = milHours
     let seconds = milTime.getSeconds()
-        let zeroSeconds = seconds
-    if (seconds < 10) {
+    let minutes = milTime.getMinutes()
+    let zeroSeconds = seconds
+        if (seconds < 10) {
         zeroSeconds = '0'+ seconds
     }
-    
-        if (milHours >= 13) {
-    let zeroMints = mint
-    if (mint < 10) {
-        zeroMints = '0'+ mint
+    let zeroMints = minutes
+        if (minutes < 10) {
+        zeroMints = '0'+ minutes
     }
-        stanHours = (milHours - 12) + ':' + zeroMints + ':' + zeroSeconds + ' PM'
+    if (milHours >= 13) {
+        stanHours = (milHours - 12)
+        clockStand.innerText = `${stanHours}:${zeroMints}:${zeroSeconds} P.M.`
+    }
+    else if (milHours === 0) {
+        stanHours = 12
+        clockStand.innerText = `${stanHours}:${zeroMints}:${zeroSeconds} A.M.`
     }
     else if (milHours <= 12) {
-    stanHours = milHours+ ':' + zeroMints + ':' + zeroSeconds + ' AM'
+    stanHours = milHours
+    clockStand.innerText = `${stanHours}:${zeroMints}:${zeroSeconds} A.M.`
     }
-    else {console.log('wrong')}
 
-
-
-    clockStand.innerText = `${stanHours}`
 }
 
 setInterval(standardTime, 1000)
 standardTime()
 
 let alarmTime = null;
-let alarmOff = null;
+let alarmTimeout = null;
 let confirmAlarm = document.getElementById('setUp')
 let reset = document.getElementById('reset')
-let constant = new Date()
-let pop = new Date(alarm)
+
+function setAlarmTime(value) {
+    alarmTime = value;
+}
 
 
 function alarm(value) {
 alarmTime = value
 }
 function alarmSet() {
+    let constant = new Date()
+    let pop = new Date(alarmTime)
     console.log(alarmTime)
     alert('The alarm was set for ' + alarmTime)
-
-    if (pop > constant) {
-        const timeout = pop.getTime() - constant.getTime();
-        alarmOff = setTimeout(() => alert('Beep Beep Beep BEEEEEP'), timeout);
-        
-        
+    if (pop > constant){
+        let myTime = pop.getTime() - constant.getTime
+        alarmTimeout = setTimeout(() => alert('Beep'), myTime)
     }
 }
 
@@ -98,13 +97,7 @@ function resetAlarm () {
     console.log(alarmTime)
 }
 
-// confirmAlarm.addEventListener('click',() =>{
-//     alarm()
-//     console.log(alarm(value))
-// } )
 reset.addEventListener('click', () => {
     resetAlarm()
 })
 
-
-console.log(alarm)

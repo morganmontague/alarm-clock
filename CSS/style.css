@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 #container {
-    height: 70vh;
+    height: 40vh;
     display: grid;
     border: 1px solid green;
     margin: 1rem;
