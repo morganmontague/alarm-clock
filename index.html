@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Alarm Clock - Morgan</title>
+        <link rel="stylesheet" href="/CSS/style.css">
+    </head>
+
+    <body>
+        <header id="headCon">
+            <h1>Alarm Clock</h1>
+        </header>
+        <main id="container">
+            <h3>
+                Military Time
+            </h3>
+            <div id="clock">
+                test
+            </div>
+            <h3>
+                Standard Time
+            </h3>
+            <div id="standardTimeDiv">
+                afs   
+            </div>
+            <section id="settings">
+                <input onchange="alarm(this.value)" type="datetime-local">
+                <button onclick="alarmSet()" id="setUp">Confirm Alarm</button>
+                <button id="reset">Reset</button>
+            </section>
+        </main>
+        <script src="./JS/main.js"></script>
+    </body>
+</html>
