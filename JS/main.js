@@ -78,7 +78,7 @@ function alarmSet() {
   alert("The alarm was set for " + alarmTime);
   if (pop > constant) {
     let myTime = pop.getTime() - constant.getTime(); ///please work
-    alarmTimeout = setTimeout(() => alert("Beep"), myTime); // didn't work
+    alarmTimeout = setTimeout(() => alert("Beep"), myTime); 
   }
 }
 
