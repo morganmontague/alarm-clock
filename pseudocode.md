@@ -15,7 +15,21 @@ An alarm clock is a way to keep track of time with the addition of an option to 
 - The alarm clock will be able to read the inputs and determine when to activate the alert.
 - *stretch goal, add a snooze (bump ten minutes) or 24 hour clock*
 ----
-let clock equal the the time displayed
-let alarm be the function to add to the clock with an addEventLister on click to signify the alarm confirm the alarm time was set.
-Using get hours and get minutes, will display the current time. 
-Once the current time =  alarm time alert will declare the alarm is done
+We need a few functions to get this to work
+* We need to get the local military time.
+    * Pull the local current date
+    * Use get hour, minutes, and seconds
+    * if minutes or seconds are less than 10 then add a 0 in front of the minute of second.
+    * Set the inner text of the section with military time to current hours:minutes:seconds.
+    * set an interval to run this function every second so it will keep the innerText updated.
+*  Now we need to add buttons to confirm the alarm set in the html date/time as well as one to reset the alarm.
+    * On changing the date/time will set the alarm input into alarmTime and add null value for alarmTime on the reset button.  
+*  Now that we have the alarm time wanted we need to set it to remember it and then will alert you when the time reaches the predetermined time.
+    *  create a new date and set the time to the alarmTime. If the alarm time bigger than the actual time (i.e. not in the past) than set a tiemstamp to the difference of the alarmtime and current time.
+    *  Have a setTimeout to throw an alert when the TimeStamp reaches the current time, alerting you the alarm is beeping.
+---
+
+getmiltTime()
+setAlarmTime()
+runAlarm()
+BEEEEP
